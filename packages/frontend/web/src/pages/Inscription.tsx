@@ -3,8 +3,12 @@ import { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 
 import FormSkin from '@/components/Forms/FormSkin';
+import FormUpload from '@/components/Forms/FormUpload';
 
-const PAGES = [{ currentPage: 0, component: <FormSkin /> }];
+const PAGES = [
+  { currentPage: 0, component: <FormUpload /> },
+  { currentPage: 1, component: <FormSkin /> },
+];
 export default function Inscription() {
   const methods = useForm();
   const [page, setPage] = useState(0);
