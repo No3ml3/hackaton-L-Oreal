@@ -31,8 +31,8 @@ export default function Logo() {
       <motion.circle
         cx='251'
         cy='2'
-        r='3'
-        fill='#fdffcd'
+        r='3' // Taille du point
+        fill='neon-text' // Couleur du point
         animate={{
           rotate: 360,
           transition: {

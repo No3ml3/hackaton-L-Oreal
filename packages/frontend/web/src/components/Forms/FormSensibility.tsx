@@ -15,10 +15,10 @@ export default function FormSensibility() {
   const { register, watch, setValue } = useFormContext();
   const [item, setItem] = useState<Category>();
 
-  const selectItem = watch('criteria_value_id');
+  const selectItem = watch('skin');
 
   const handleClick = () => {
-    setValue('criteria_value_id', selectItem);
+    setValue('skin', selectItem);
   };
 
   useEffect(() => {
@@ -37,6 +37,8 @@ export default function FormSensibility() {
     };
   }, []);
 
+  console.log(item);
+
   return (
     <div>
       <h1 className='text-secondary font-base mt-5 text-2xl lg:text-3xl'>
@@ -48,7 +50,7 @@ export default function FormSensibility() {
             <label
               onClick={handleClick}
               htmlFor={String(criter.id)}
-              className={`border-gold hover:bg-secondary hover:text-primary flex w-[70%] cursor-pointer items-center justify-center border py-3 text-xl tracking-widest ${selectItem === String(criter.id) ? 'bg-secondary text-primary' : ''}`}
+              className={`border-gold hover:bg-secondary hover:text-primary flex w-[70%] cursor-pointer items-center justify-center border py-3 text-xl tracking-widest ${selectItem === criter.criteria_name ? 'bg-secondary text-primary' : ''}`}
             >
               {criter.criteria_name}
             </label>
@@ -57,8 +59,8 @@ export default function FormSensibility() {
               type='radio'
               id={String(criter.id)}
               /* name={item.category_name} */
-              {...register('criteria_value_id')}
-              value={criter.id}
+              {...register('skin')}
+              value={criter.criteria_name}
             />
           </div>
         ))}

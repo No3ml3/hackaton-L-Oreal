@@ -1,5 +1,4 @@
 import Diagnostic from '@/pages/Diagnostic';
-import Inscription from '@/pages/Inscription';
 
 import { useAuth } from '../contexts/AuthContext';
 import Login from './auth/Login';
