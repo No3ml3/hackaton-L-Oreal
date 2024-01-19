@@ -28,9 +28,7 @@ export default function Menu({ bool, setBool }: CardFinalDiagnosticProps) {
     if (Boolean(productsString)) {
       setProducts(JSON.parse(productsString as string));
     }
-
   }, [productsString, setBool]);
-
   console.log(bool);
 
   const handleLogout = async () => {
